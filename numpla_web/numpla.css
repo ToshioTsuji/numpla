@@ -1,0 +1,154 @@
+﻿body {
+    font-size:1em;
+}
+
+.numpla_flex_box {
+    display: flex;
+    flex-direction: column;
+}
+
+.numpla_center {
+    display: flex;
+    justify-content: center;
+}
+
+/*盤面の設定*/
+table#numpla_board {
+    border-collapse: collapse; /* 表の線と線の間を縮める */
+    border-spacing: 0px; /* 表の線と線の間の幅 */
+    table-layout: fixed;
+    color: black;
+}
+
+    table#numpla_board tr {
+        border: solid medium black; /* 枠線指定 */
+        line-height: 3em;
+    }
+
+        /* 3行ごとに線を太くする */
+        table#numpla_board tr:nth-child(3n+1) {
+            border-top-width: thick;
+        }
+
+        /* 最下行の下の線を太くする */
+        table#numpla_board tr:nth-child(9) {
+            border-bottom-width: thick;
+        }
+
+        /*マスの設定*/
+        table#numpla_board tr td {
+            border: solid medium black; /* 枠線指定 */
+            padding: 0px; /* 余白指定 */
+            width: 4em; /* 幅指定 */
+            height: 3em; /* 高さ指定 */
+            text-align: center; /* 文字の水平位置指定 */
+            vertical-align: middle; /* 文字の垂直位置指定 */
+        }
+
+            /* 3列ごとに線を太くする */
+            table#numpla_board tr td:nth-child(3n+1) {
+                border-left-width: thick;
+            }
+
+            /* 最右列の右の線を太くする */
+            table#numpla_board tr td:nth-child(9) {
+                border-right-width: thick;
+            }
+
+
+/*盤面のマス:空*/
+.numpla_board_empty {
+   background-color:white;
+}
+
+    .numpla_board_empty:hover {
+        background-color: lightcyan;
+    }
+
+/*盤面のマス:完成*/
+.numpla_board_complete {
+    background-color:lightcyan;
+}
+
+/*盤面のマス:次の手*/
+.numpla_board_selected {
+    background-color: aqua;
+}
+
+/*盤面のマス:エラー*/
+.numpla_board_error {
+    background-color: tomato;
+}
+
+/*盤面のマス:基本*/
+.numpla_board_base {
+    background-color:lightblue;
+}
+
+/*盤面のマス:置いた手*/
+.numpla_board_move {
+    font-weight: bold;
+    background-color:gainsboro;
+    color: blueviolet;
+    font-style: italic;
+}
+
+/*選択肢テーブルの設定*/
+table #numpla_numbers {
+    border-collapse: collapse; /* 表の線と線の間を縮める */
+    border-spacing: 0px; /* 表の線と線の間の幅 */
+    border-collapse: collapse; /* セルの線を重ねる */
+    border-top-width: thick;
+    table-layout: fixed;
+}
+
+    table#numpla_numbers tr {
+        border: solid medium black; /* 枠線指定 */
+    }
+
+        table#numpla_numbers tr td {
+            border: solid medium; /* 枠線指定 */
+            padding: 0px; /* 余白指定 */
+            width: 4em; /* 幅指定 */
+            height: 3em; /* 高さ指定 */
+            text-align: center; /* 文字の水平位置指定 */
+            vertical-align: middle; /* 文字の垂直位置指定 */
+        }
+
+
+
+/*番号選択:完了*/
+.numpla_number_complete {
+    background-color: khaki;
+}
+
+/*番号選択:エラー*/
+.numpla_number_error {
+    background-color: tomato;
+}
+
+/*番号選択:選択中*/
+.numpla_number_selected {
+    background-color: aqua;
+}
+
+/*番号選択:通常*/
+.numpla_number_normal {
+    background-color: white;
+}
+
+    .numpla_number_normal:hover {
+        background-color: lightcyan;
+    }
+
+
+#numpla_others td {
+    border: solid medium black; /* 枠線指定 */
+}
+#numpla_others td:hover {
+    background-color: lightcyan;
+}
+
+    #numpla_others td.numpla_no_border {
+        border: none; /*枠線無*/
+    }
